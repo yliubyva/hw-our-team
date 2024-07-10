@@ -1,0 +1,11 @@
+.button {
+    font-family: $font-button;
+    @include text(14px, 700, $gray-3, 14px);
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid $main-color;
+    padding: 5px 10px;
+    margin-top: 25px;
+}
+
+
