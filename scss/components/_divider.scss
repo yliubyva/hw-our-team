@@ -1,84 +1,72 @@
 .divider {
-  height: 20px;
+  height: 1px;
 
-  &::after {
-    content: "";
-    display: inline-block;
-    position: relative;
-    border: 0.5px solid $main-color;
-    top: -10px;
-    right: 0;
-    width: 210px;
+  &--header {
+    height: 20px;
+    &::after,
+    &::before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      border: 0.5px solid $main-color;
+      top: -10px;
+      right: 0;
+      width: 210px;
+    }
   }
-
-  &::before {
-    content: "";
-    display: inline-block;
-    position: relative;
-    border: 0.5px solid $main-color;
-    top: -10px;
-    left: 0;
-    width: 210px;
-  }
-
   &--top {
+    &::after,
     &::before {
       content: "";
       position: absolute;
       border-top: 1px solid $main-color;
-      border-right: 1px solid $main-color;
       top: 0;
-      right: 0;
       width: 100px;
       height: 100px;
     }
-
+    &::before {
+      right: 0;
+      border-right: 1px solid $main-color;
+    }
     &::after {
-      content: "";
-      position: absolute;
-      border-top: 1px solid $main-color;
-      border-left: 1px solid $main-color;
-      top: 0;
       left: 0;
-      width: 100px;
-      height: 100px;
+      border-left: 1px solid $main-color;
     }
   }
 
   &--bottom {
+    &::after,
     &::before {
       content: "";
       position: absolute;
       border-bottom: 1px solid $main-color;
-      border-right: 1px solid $main-color;
       bottom: 0;
+      width: 100px;
+      height: 100px;
+    }
+    &::before {
       right: 0;
-      width: 100px;
-      height: 100px;
+      border-right: 1px solid $main-color;
     }
-
     &::after {
-      content: "";
-      position: absolute;
-      border-bottom: 1px solid $main-color;
-      border-left: 1px solid $main-color;
-      bottom: 0;
       left: 0;
-      width: 100px;
-      height: 100px;
+      border-left: 1px solid $main-color;
     }
+  }
+
+  &--vertical,
+  &--horizontal {
+    border: 0.5px solid $main-color;
   }
 
   &--vertical {
     height: 560px;
     width: 0;
-    border: 0.5px solid $main-color;
   }
 
   &--horizontal {
     width: 100px;
     height: 1px;
-    border: 0.5px solid $main-color;
   }
 
   &--dotted {
@@ -86,23 +74,19 @@
     height: 1px;
     border: 2px solid $main-color;
     position: relative;
-    &::after {
-      content: "";
+    &::after,
+    &::before {
+      content: '';
       position: absolute;
       top: -2px;
-      left: -20px;
       width: 10px;
-
       border: 2px solid $main-color;
     }
+    &::after {
+      left: -20px;
+    }
     &::before {
-      content: "";
-      position: absolute;
-      top: -2px;
       left: 25px;
-      width: 10px;
-
-      border: 2px solid $main-color;
     }
   }
 }
